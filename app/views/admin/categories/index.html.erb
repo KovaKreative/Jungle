@@ -4,13 +4,31 @@
     <h1>Admin &raquo; All Categories</h1>
   </header>
 
-  <div class="d-flex justify-content-around align-items-center">
+  <div class="d-flex flex-wrap justify-content-between align-items-center">
 
   <%= render @categories %>
   
-  <div class="well">
-    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+  <div>
+      <%= form_for [:admin, @category] do |form| %>
+
+        <% if form.object.errors.any? %>
+          <div class="alert alert-danger">
+            <strong>The following errors prevented saving:</strong>
+            <ul>
+              <% form.object.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="input-group">
+          <%= form.text_field :name, class: 'form-control' %>
+          <%= form.submit '+New', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
   </div>
+
 
   </div>
 
