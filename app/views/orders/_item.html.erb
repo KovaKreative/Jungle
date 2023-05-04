@@ -1,0 +1,9 @@
+<div class="media d-flex align-items-start">
+  <%= image_tag product.image.tiny.url, class: 'mx-2' %>
+  <div class="media-body">
+    <h4 class="mt-0"><%= product.name %></h4>
+    <p class="small"><%= product.description %></p>
+    <h4><%= humanized_money_with_symbol item.item_price_cents / 100.00 %> x <%= item.quantity %>: <%= humanized_money_with_symbol item.total_price_cents / 100.00 %></h4>
+  </div>
+</div>
+<hr>
