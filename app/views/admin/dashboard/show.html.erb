@@ -1,2 +1,9 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1 class="my-4">Admin Dashboard</h1>
+<hr>
+<div class="row my-3">
+  <h3 class="col-5">Total products:</h4><a class="col-5" href="/admin/products"><h4><%=@products.length %></h4></a>
+</div>
+<div class="row my-3">
+  <h3 class="col-5">Total categories:</h4><h4 class="col-5"><%=@categories.length %></h4>
+</div>
+<hr>
