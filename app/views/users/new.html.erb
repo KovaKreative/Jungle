@@ -3,23 +3,23 @@
 <%= form_for :user, url: '/users' do |f| %>
 <div class="row my-2">
   <div class="form-group col-6">
-    First Name<%= f.text_field :first_name, class: "form-control"%>
+    First Name<%= f.text_field :first_name, class: "form-control", :required => 'required'%>
   </div>
   <div class="form-group col-6">
-    Last Name<%= f.text_field :last_name, class: "form-control" %>
+    Last Name<%= f.text_field :last_name, class: "form-control", :required => 'required' %>
   </div>
 </div>
 <div class="row my-2">
   <div class="form-group col-12">
-    Email<%= f.text_field :email, class: "form-control" %>
+    Email<%= f.text_field :email, class: "form-control", :required => 'required' %>
   </div>
 </div>
 <div class="row my-2">
   <div class="form-group col-6">
-    Password<%= f.password_field :password, class: "form-control" %>
+    Password<%= f.password_field :password, class: "form-control", :required => 'required' %>
   </div>
     <div class="form-group col-6">
-    Password Confirmation<%= f.password_field :password_confirmation, class: "form-control" %>
+    Password Confirmation<%= f.password_field :password_confirmation, class: "form-control", :required => 'required' %>
   </div>
 </div>
 <div class="row my-2">
