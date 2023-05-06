@@ -9,21 +9,6 @@
     <%= sale.ends_on %>
   </td>
   <td>
-      <% 
-      # Determine the colour of the badge based on the status
-        def status_colour status
-          case status
-          when "Active"
-            return "bg-success"
-          when "Upcoming"
-            return "bg-info"
-          when "Finished"
-            return "bg-secondary"
-          else
-            return "bg-primary"
-          end
-        end
-      %>
       <span class="badge <%=status_colour sale.status %>"><%=sale.status%></span>
   </td>
   <td>
