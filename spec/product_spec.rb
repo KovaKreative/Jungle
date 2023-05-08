@@ -8,12 +8,24 @@ RSpec.describe Product, type: :model do
     end
     
     it "is not valid with name missing" do
-      @product = Product.new(price: 1000, quantity: 5, category: Category.new())
+      @product = Product.new(name: nil, price: 1000, quantity: 5, category: Category.new())
       expect(@product).to_not be_valid
     end
-    it "is not valid with price missing"
-    it "is not valid with quantity missing"
-    it "is not valid with category missing"
+
+    it "is not valid with price missing" do
+      @product = Product.new(name: "Prod name", price_cents: nil, quantity: 5, category: Category.new())
+      expect(@product).to_not be_valid
+    end
+
+    it "is not valid with quantity missing" do
+      @product = Product.new(name: "Prod name", price: 1000, quantity: nil, category: Category.new())
+      expect(@product).to_not be_valid
+    end
+
+    it "is not valid with category missing" do
+      @product = Product.new(name: "Prod name", price: 1000, quantity: 5, category: nil)
+      expect(@product).to_not be_valid
+    end
 
   end
 end
