@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    it "is valid with valid attributes" do
+    it "is valid with name, price, quantity, and category attributes" do
       @product = Product.new(name: "Prod name", price: 1000, quantity: 5, category: Category.new())
       expect(@product).to be_valid
       expect(@product.errors.full_messages).to match_array([])
