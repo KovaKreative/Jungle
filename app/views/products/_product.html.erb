@@ -7,7 +7,6 @@
     </h1>
   <% end%>
   <div class="align-content-stretch">
-    <%# If the product quantity is 0, show the sold out badge and a disabled button that does nothing. %>
     <% if product.quantity <= 0 %>
       <h5 class="badge bg-danger text-white d-flex flex-column justify-content-center py-2 px-4 m-0">Sold Out</h5>
       <button class="btn btn-success disabled" disabled><i class="fa fa-shopping-cart"></i> Add</button>
