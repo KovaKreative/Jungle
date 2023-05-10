@@ -3,6 +3,7 @@ class CartsController < ApplicationController
 
   
   def show
+    @user = current_user
   end
 
   def add_item
